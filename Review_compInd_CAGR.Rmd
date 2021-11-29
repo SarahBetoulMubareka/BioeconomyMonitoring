@@ -1,0 +1,287 @@
+---
+title: "Bioeconomy Trends Assessment"
+author: "Sarah Mubareka"
+reviewer: "--"
+date: "25/11/2021"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using visdat}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, echo = FALSE, include = FALSE}
+
+knitr::opts_chunk$set(fig.width = 7,
+                      fig.height = 4)
+
+
+
+library(purrr)
+library(tidyverse)
+library(dplyr)
+library(COINr)
+library(naniar)
+```
+## Pre-processing indicators 
+
+The code below shows the procedure for creating the composite view of trends of the EU Bioeconomy's main objectives. The approach is a hierarchical one, with treatment of indicators and aggregation to key component and normative criteria levels and ultimately to the Strategy Objectives level.
+
+We start by exploring and cleaning the raw indicators and filling in data for the alternate years (some indicators report every other year only).
+
+### Read all indicators csv file 
+The indicators were bulk downloaded from the system internally. This is not yet possible from the Internet but is planned. One of the attributes downloaded is the Green Deal Key. Indicators may have many Green Deal priorities associated. This results in multiple entries per indicator. 
+```{r}
+
+merged_GD<- read.csv("all_indicators.csv")
+
+#REMOVE GD COLUMN FOR NOW 
+merged<-merged_GD %>%
+  select(-gd_id)
+
+```
+
+### Check available years in data 
+We explore the years available for the data
+```{r}
+yearminmax<-merged %>%
+    group_by(indicator_id) %>%
+  mutate(minyr = min(time),maxyr=max(time)) %>%
+  distinct(indicator_id, minyr, maxyr) %>%
+  arrange(indicator_id)
+print(yearminmax)
+```
+
+### Delete unwanted rows
+We know there are some redundant indicators (e.g. sum of parts) and we want to remove these. We also want to remove indicators that are from before 2008.Since we want to keep track of the rows deleted, these are listed one by one so they may be changed if data improves over time.
+```{r}
+merged_sub<-merged %>%
+  subset(type!="VEG_share") %>%
+  subset(type!="ANI_share") %>%
+  subset(type!="TOTAL") %>%
+  subset(type!="all_stages") %>%
+  subset(type!="all_categories") %>%
+  subset(type!="felling_rates") %>%
+  subset(type!="TPA_PC")%>%
+  subset(time>2007)%>%
+  subset(time<2019)%>%
+  subset(geo_code!="27")%>%
+  subset(geo_code!="37")%>%
+  subset(geo_code!="UK")%>%
+  subset(geo_code!="EU28")%>%
+  subset(geo_code!="EU_V")%>%
+  subset(geo_code!="EU27_2020")
+
+```
+
+### Computing indicators at EU-27_2020 level  
+To complete data coverage for all indicators we use values from the closest available year. Furthermore, we wish to compute the mean for the EU.
+```{r}
+#impute and retain years 2012 and 2017 only
+merged_subf_MS <-merged_sub %>%
+    distinct(indicator_id, type, geo_code,time, .keep_all=TRUE) %>%
+    group_by(geo_code, type, indicator_id) %>% 
+    complete(time = full_seq(2010:2018, 1)) %>% 
+    fill(value, .direction="downup") %>%
+  subset(time==2012 | time==2017)
+```
+We selected the period between the years 2012 and 2017 for the analysis because this period contains data for all indicators. We apply the approach used by ESTAT for the computation of trends towards Sustainable Development Goals (https://ec.europa.eu/eurostat/web/sdi) . They apply a CAGR (Compound Annual Growth Rate) to two years, explained in Annex III of the ESTAT SDGs annual report for 2021. 
+We apply this to the dataset, so we compute a new column with CAGR for each MS,then we compute the mean for the EU based on these numbers.
+```{r}
+
+# process CAGR for MS
+pcchange_MS <-merged_subf_MS %>%
+    group_by(indicator_id, type, geo_code) %>% 
+    arrange(time, .by_group = TRUE) %>%
+    mutate(CAGR = (((value/lag(value))**(0.1666667))-1)*100) %>% 
+    na.omit %>%
+    select(-value)
+# process EU-27_2020
+pcchange_EU<- pcchange_MS %>%
+  group_by(indicator_id, type, time)%>%
+  summarise_at(vars(CAGR), funs(mean(., na.rm=TRUE))) %>%
+  mutate (geo_code = "EU-27")
+# combine MS and EU dataframes
+merged_subf<-bind_rows(pcchange_MS,pcchange_EU)%>% 
+  replace_with_na(replace = list(CAGR = "Inf")) 
+write.csv(merged_subf,"merged_subf.csv",quote = FALSE, row.names=FALSE)
+
+```
+### Reshape dataframe from long to wide
+Reshape the dataframe to a wide format as this is the format expected by COINr package.
+
+```{r}
+#convert from long to wide format for COINr tool
+merged_subf$indicator <- paste(merged_subf$indicator_id, "_",merged_subf$type)
+merged_subf_ind = subset(merged_subf, select = -c(indicator_id,type) )
+coininput<-merged_subf_ind %>%
+  pivot_wider(names_from = indicator, values_from = CAGR) %>%
+  mutate(UnitName=geo_code, UnitCode=geo_code) %>%
+  mutate(Year=time) %>%
+  relocate(UnitName,UnitCode, Year) 
+coininput_sub = subset(coininput, select = -c(geo_code, time) )
+write.csv(coininput_sub,"coininputf.csv",quote = FALSE, row.names=FALSE)
+
+```
+Read in the structural hierarchy of the EU Bioeconomy Monitoring System
+```{r}
+metadata<-read.csv("metadata_.csv")
+AggregateMeta<-read.csv("AggregateMeta.csv")
+```
+To check whether or not the indicators are correctly mapped to their parent groups, we generate a figure showing the hierarchy based on the data.
+
+```{r}
+# assemble indicators, metadata and aggregate metadata files
+indicators<- coininput_sub 
+assembled_ALL <- assemble(indicators, metadata, AggregateMeta) |>
+  suppressMessages()
+# plot framework
+plotframework(assembled_ALL)
+
+```
+## Processing indicators 
+
+### Statistics of raw data
+To investigate the data better, we have a look at the statistics.
+```{r}
+# get stats
+assembled_ALL <- getStats(assembled_ALL, dset = "Raw", out2 = "COIN")
+# display in table using Reactable
+assembled_ALL$Analysis$Raw$StatTable |>
+  roundDF() |>
+  reactable::reactable(resizable = TRUE, bordered = TRUE,
+                       highlight = TRUE, defaultPageSize = 10)
+
+```
+
+The missing data points are identified.
+
+```{r}
+assembled_ALL <- checkData(assembled_ALL, dset = "Raw")
+head(assembled_ALL$Analysis$Raw$MissDatSummary)
+```
+
+### Imputation
+```{r}
+# impute using indicator mean
+assembled_ALL <- impute(assembled_ALL, dset = "Raw", imtype = "ind_mean")
+# check how many NAs after imputation
+head(sum(is.na(assembled_ALL$Data$Imputed)))
+
+
+```
+### Data treatment for outliers 
+```{r,fig.cap = "Example of distribution of indicator 3.1.a.2-Material footprint (biomass) per capita before and after outlier treatment"}
+# treat using defaults
+assembled_ALL <- treat(assembled_ALL, dset = "Imputed", winmax = 5)
+#check results
+head(assembled_ALL$Analysis$Treated$TreatSummary %>% filter(Treatment != "None"))
+iplotIndDist2(assembled_ALL, dsets = c("Imputed", "Treated"), icodes = "3.1.a.2 _ Material_Footprint_(Biomass)_per_capita",
+              ptype = "Histogram")
+#assembled_ALL <- normalise(assembled_ALL, dset="Treated", ntype="goalposts", npara = list(goalposts = c(-10,10,1)))
+assembled_ALL <- aggregate(assembled_ALL, dset = "Treated",out2 = "df")
+
+wide<-assembled_ALL
+write.csv(assembled_ALL,"assembled_ALL2017.csv",quote = FALSE, row.names=FALSE)
+```
+
+## Results
+### Compare EU-27_2020 results to MS
+```{r}
+indicators<- coininput_sub 
+assembled_ALL <- assemble(IndData = indicators, IndMeta = metadata, AggMeta = AggregateMeta)|>
+  suppressMessages()
+assembled_ALL <- impute(assembled_ALL, dset = "Raw", imtype = "ind_mean")
+assembled_ALL <- treat(assembled_ALL, dset = "Imputed", winmax = 5)
+assembled_ALL <- aggregate(assembled_ALL, dset = "Treated")
+iplotBar(assembled_ALL, dset = "Aggregated", isel = "Food", usel = "EU-27", aglev = 4)
+```
+```{r}
+indicators<- coininput_sub 
+assembled_ALL <- assemble(IndData = indicators, IndMeta = metadata, AggMeta = AggregateMeta)|>
+  suppressMessages()
+assembled_ALL <- impute(assembled_ALL, dset = "Raw", imtype = "ind_mean")
+assembled_ALL <- treat(assembled_ALL, dset = "Imputed", winmax = 5)
+assembled_ALL <- aggregate(assembled_ALL, dset = "Treated")
+iplotBar(assembled_ALL, dset = "Aggregated", isel = "Resources", usel = "EU-27", aglev = 4)
+```
+```{r}
+indicators<- coininput_sub 
+assembled_ALL <- assemble(IndData = indicators, IndMeta = metadata, AggMeta = AggregateMeta)|>
+  suppressMessages()
+assembled_ALL <- impute(assembled_ALL, dset = "Raw", imtype = "ind_mean")
+assembled_ALL <- treat(assembled_ALL, dset = "Imputed", winmax = 5)
+assembled_ALL <- aggregate(assembled_ALL, dset = "Treated")
+iplotBar(assembled_ALL, dset = "Aggregated", isel = "Defossilization", usel = "EU-27", aglev = 4)
+```
+```{r}
+assembled_ALL <- assemble(IndData = indicators, IndMeta = metadata, AggMeta = AggregateMeta)|>
+  suppressMessages()
+assembled_ALL <- impute(assembled_ALL, dset = "Raw", imtype = "ind_mean")
+assembled_ALL <- treat(assembled_ALL, dset = "Imputed", winmax = 5)
+assembled_ALL <- aggregate(assembled_ALL, dset = "Treated")
+iplotBar(assembled_ALL, dset = "Aggregated", isel = "Climate", usel = "EU-27", aglev = 4)
+```
+```{r}
+assembled_ALL <- assemble(IndData = indicators, IndMeta = metadata, AggMeta = AggregateMeta)|>
+  suppressMessages()
+assembled_ALL <- impute(assembled_ALL, dset = "Raw", imtype = "ind_mean")
+assembled_ALL <- treat(assembled_ALL, dset = "Imputed", winmax = 5)
+assembled_ALL <- aggregate(assembled_ALL, dset = "Treated")
+iplotBar(assembled_ALL, dset = "Aggregated", isel = "Competitiveness", usel = "EU-27", aglev = 4)
+```
+```{r}
+#write to long format
+assembled_ALL <- wide%>%
+  subset(UnitName=="EU-27")
+long <- assembled_ALL %>% 
+  gather(key="indicator", value= "CAGR",-c(Year)) %>%
+  mutate(CAGR2= as.numeric(CAGR,length=2))
+long = long[-c(1:56),]
+```
+
+
+## Plots
+###Plot rate of change for Strategy Objectives
+```{r, fig.cap="Compound annual growth rate between 2012-2017 per Strategy Objective"}
+final_hier<-long%>%
+  mutate(Code = indicator)%>%
+  select(-Year) %>%
+  merge(AggregateMeta, by = "Code", all = TRUE)%>%
+  na.omit()%>%
+  select(-indicator,-Weight) %>%
+  subset(AgLevel==4)
+parents=list(final_hier$Name)
+ggplot(final_hier, aes(x=Code,y=round(as.numeric(CAGR), digits = 2))) +
+  geom_col() + 
+  coord_flip()
+```
+### Plot rate of change for Normative criteria level
+```{r, fig.cap="Average annual rate of change between 2012-2017 per normative criteria"}
+final_hier<-long%>%
+  mutate(Code = indicator)%>%
+  select(-Year) %>%
+  merge(AggregateMeta, by = "Code", all = TRUE)%>%
+  na.omit()%>%
+  select(-indicator,-Weight) %>%
+  subset(AgLevel==3)
+parents=list(final_hier$Name)
+ggplot(final_hier, aes(x=Code,y=round(as.numeric(CAGR), digits = 2))) +
+  geom_col() + 
+  coord_flip()
+```
+### Plot rate of change for each Key component
+```{r, fig.cap="Average annual rate of change between 2012-2017 per Key component"}
+final_hier<-long%>%
+  mutate(Code = indicator)%>%
+  select(-Year) %>%
+  merge(AggregateMeta, by = "Code", all = TRUE)%>%
+  na.omit()%>%
+  select(-indicator,-Weight) %>%
+  subset(AgLevel==2)
+parents=list(final_hier$Name)
+ggplot(final_hier, aes(x=Code,y=round(as.numeric(CAGR), digits = 2))) +
+  geom_col() + 
+  coord_flip()
+```
+

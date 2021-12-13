@@ -1,0 +1,170 @@
+---
+title: "Bioeconomy Trends Assessment"
+author: "Sarah Mubareka"
+reviewer: "--"
+date: "13/12/2021"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using visdat}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, echo = FALSE, include = FALSE}
+
+knitr::opts_chunk$set(fig.width = 7,
+                      fig.height = 4)
+
+
+
+library(purrr)
+library(tidyverse)
+library(dplyr)
+library(COINr)
+library(naniar)
+```
+## Pre-processing indicators 
+
+The code below shows the procedure for creating the composite view of trends of the EU Bioeconomy's main objectives. The approach is a hierarchical one, with treatment of indicators and aggregation to key component and normative criteria levels and ultimately to the Strategy Objectives level.
+
+We start by exploring and cleaning the raw indicators and filling in data for the alternate years (some indicators report every other year only).
+
+### Read all indicators csv file 
+The indicators were bulk downloaded from the system internally. This is not yet possible from the Internet but is planned. One of the attributes downloaded is the Green Deal Key. Indicators may have many Green Deal priorities associated. This results in multiple entries per indicator. 
+```{r}
+
+merged_GD<- read.csv("all_indicators.csv")
+
+#REMOVE GD COLUMN FOR NOW 
+merged<-merged_GD %>%
+  select(-gd_id)
+
+```
+
+
+### Check available years in data 
+We explore the years available for the data
+```{r}
+yearminmax<-merged %>%
+    group_by(indicator_id) %>%
+  mutate(minyr = min(time),maxyr=max(time)) %>%
+  distinct(indicator_id, minyr, maxyr) %>%
+  arrange(indicator_id)
+print(yearminmax)
+```
+
+
+### Delete unwanted rows
+We know there are some redundant indicators (e.g. sum of parts) and we want to remove these. We also want to remove indicators that are from before 2008.Since we want to keep track of the rows deleted, these are listed one by one so they may be changed if data improves over time.
+```{r}
+merged_sub<-merged %>%
+  subset(type!="VEG_share") %>% #redundant with tot veg
+  subset(type!="ANI_share") %>% #redundant with tot ani
+  subset(type!="TOTAL") %>% #redundant with tot veg + tot ani
+  subset(type!="all_stages") %>% #redundant with food waste along value chain
+  subset(type!="all_categories") %>% #redundant with food waste for each food category
+  subset(type!="felling_rates") %>% #removed SOEF data which is not frequent enough
+  subset(type!="TPA_PC")%>%
+  subset(indicator_id!="2.3.a.2")%>%   #this is the only indicator under provisional services (RW removals)
+  subset(time>2007)%>%
+  subset(time<2019)%>%
+  subset(geo_code!="UK")%>%
+  subset(geo_code!="EU28") #we are not interested in EU28 as an entity anymore
+
+```
+Add felling rates from JRC data. The felling rate estimated from CBM is based on the methodological assumptions as considered in Grassi et al., 2018. Within these runs, the historical period 2000–2015 was modelled according to the amount of harvest removals reported by FAOSTAT, further corrected - when needed - according to other ancillary data sources. Net Annual Increment values used to estimate the felling rate is referred to the merchantable biomass component (i.e. excluding branches), while the amount of felling includes both removals and logging residues plus other losses due to natural disturbances, as  estimated by CBM. For further methodological detailes please see: Pilli, R., Grassi, G., Provision of technical and scientific support to DG ESTAT in relation to EU land footprint estimates and gap-filling techniques for European forest accounts (LAFO), EUR 30581 EN, Publications Office of the European Union, Luxembourg, 2021, ISBN 978-92-76-29684-3, doi:10.2760/73306, JRC123404.
+and Grassi, G., Pilli, R., House, J. et al. Science-based approach for credible accounting of mitigation in managed forests. Carbon Balance Manage 13, 8 (2018). https://doi.org/10.1186/s13021-018-0096-2                                                                                                           
+```{r}
+
+fellings<-read.csv("fellings.csv")
+merged_sub <-bind_rows(merged_sub,fellings)  
+```
+
+### Computing indicators at EU-27_2020 level  
+To complete data coverage for all indicators we use values from the closest available year. Furthermore, we wish to compute the mean for the EU.
+```{r}
+#impute and retain years 2012 and 2017 only
+merged_subf_MS <-merged_sub %>%
+    distinct(indicator_id, type, geo_code,time, .keep_all=TRUE) %>%
+    group_by(geo_code, type, indicator_id) %>% 
+    complete(time = full_seq(2010:2018, 1)) %>% 
+    fill(value, .direction="downup") %>%
+  subset(time==2012 | time==2017)
+```
+
+Not all indicators have a ready-computed Eu-27 or EU-V (EU for available countries if coverage is incomplete)level value. We have to find them and fill those. Furthermore, the emissions indicators are a strange animal in the dataset, first because the more the negative the better (i.e. they are sinks), but other indicators also have this characteristic (negative directionality) but mainly because the sinks start out as negative. Therefore they have to brought o a positive scale prior to further processing.
+
+```{r}
+#see all values in the geography column
+allgeo<-as.data.frame(unique(merged_subf_MS$geo_code))
+#Merge dataframes of EU calculated and the original, giving priority to the pre-calculated original
+temp<- merged_subf_MS %>%
+  group_by(indicator_id, type, time)%>%
+  summarise_at(vars(value), funs(mean(., na.rm=TRUE))) %>%
+  mutate (geo_code = "EU27_2020")
+
+merged_EU_MS<-merged_subf_MS%>%
+  merge(temp,all=TRUE) %>%
+  distinct(indicator_id,geo_code,type,time, .keep_all=TRUE )%>%
+  mutate(abs(value)) %>%
+  select(-value) %>%
+  rename(value="abs(value)")
+
+```
+
+We selected the period between the years 2012 and 2017 for the analysis because this period contains data for all indicators. We apply the approach used by ESTAT for the computation of trends towards Sustainable Development Goals (https://ec.europa.eu/eurostat/web/sdi) . They apply a CAGR (Compound Annual Growth Rate) to two years, explained in Annex III of the ESTAT SDGs annual report for 2021. CAGR=((lastyearvalue/firstyearvalue)^(1/number of years))-1. We apply this to the dataset, so we compute a new column with CAGR for each MS,then we compute the mean for the EU based on these numbers.
+```{r} 
+#knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+
+# process CAGR for MS and EU-27 
+pcchange_EU_MS <-merged_EU_MS %>%
+    group_by(indicator_id, type, geo_code) %>% 
+    arrange(time, .by_group = TRUE) %>%
+    mutate(CAGR = (((value/lag(value))**(1/6))-1)*100) %>% 
+    na.omit %>%
+    select(-value) %>%  
+    subset(geo_code!="EU_V")
+
+##add in ecosystem condition indicators manually (to be published at end of 2021)
+extra<-read.csv("ecosystemconditionindicators.csv")
+merged_subf_esc <-bind_rows(pcchange_EU_MS,extra)
+pcchange_EU_MS<-merged_subf_esc %>%
+  subset(geo_code=="EU27_2020")%>% #if we want to isolate only EU27 - but then winorisation is not possible
+  arrange(indicator_id)%>%
+  distinct(geo_code, type, indicator_id,time,.keep_all = TRUE)
+```
+### Reshape dataframe from long to wide
+Reshape the dataframe to a wide format as this is the format expected by COINr package.
+
+```{r}
+#convert from long to wide format for COINr tooland to make graphs of indicator progress
+pcchange_EU_MS$indicator <- paste(pcchange_EU_MS$indicator_id, "_",pcchange_EU_MS$type)
+merged_subf_ind = subset(pcchange_EU_MS, select = -c(indicator_id,type) )
+```
+Read in the structural hierarchy of the EU Bioeconomy Monitoring System
+```{r}
+metadata<-read.csv("metadata_.csv")
+AggregateMeta<-read.csv("AggregateMeta.csv")
+```
+Prepare excel for review:
+```{r}
+forplot<-merged_subf_ind
+forplot$IndCode<-forplot$indicator
+joinforplot<-plyr::join(forplot,metadata,by="IndCode" )%>%
+  mutate(CAGRcorrdir=Direction*CAGR) %>%
+  select(-indicator,-IndCode,-IntUnit)
+write.csv(joinforplot,"joinforplot.csv",quote = FALSE, row.names=FALSE)
+
+
+kcncobj<-joinforplot %>%
+  group_by(Agg_NC)%>%
+  mutate(meannc=mean(CAGRcorrdir)) %>%
+  group_by(Agg_KC)%>%
+  mutate(meankc=mean(CAGRcorrdir)) %>%
+  group_by(Agg_OBJ)%>%
+  mutate(meanobj=mean(CAGRcorrdir)) 
+
+write.csv(kcncobj,"summarybynckcobj.csv")
+```
+

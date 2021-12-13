@@ -1,180 +1,191 @@
-IndName,IndCode,Direction,IndWeight,IntUnit,Agg_KC,Agg_NC,Agg_OBJ
-1.1.a.1   I10,1.1.a.1 _ I10,1,1,pcannchg,Availability,SupportFoodSec,Food
-1.1.a.4   1000 T of dry matter (Net trade),1.1.a.4 _ 1000_T_of_dry_matter_(Net_trade),1,1,pcannchg,Availability,SupportFoodSec,Food
-1.1.b.1   percent,1.1.b.1 _ percent,-1,1,pcannchg,Access,SupportFoodSec,Food
-1.1.c.1   ANI,1.1.c.1 _ ANI,1,1,pcannchg,Utilisation,SupportFoodSec,Food
-1.1.c.1   VEG,1.1.c.1 _ VEG,1,1,pcannchg,Utilisation,SupportFoodSec,Food
-2.1.b.4   PC UAA,2.1.b.4 _ PC_UAA,1,1,pcannchg,StructrEcosys,EcosysProd,Resources
-2.1.b.9   GS FOR,2.1.b.9 _ GS_FOR,1,1,pcannchg,StructrEcosys,EcosysProd,Resources
-2.1.b.9   GS OWL,2.1.b.9 _ GS_OWL,1,1,pcannchg,StructrEcosys,EcosysProd,Resources
-2.1.e.1   MPA KM2,2.1.e.1 _ MPA_KM2,1,1,pcannchg,Conservation,EcosysProd,Resources
-2.1.e.1   TPA KM2,2.1.e.1 _ TPA_KM2,1,1,pcannchg,Conservation,EcosysProd,Resources
-2.2.d.5   HIGH INP,2.2.d.5 _ HIGH_INP,-1,1,pcannchg,AgroEcol,PPsysMgmt,Resources
-2.2.d.5   LOW INP,2.2.d.5 _ LOW_INP,1,1,pcannchg,AgroEcol,PPsysMgmt,Resources
-2.2.d.5   MED INP,2.2.d.5 _ MED_INP,-1,1,pcannchg,AgroEcol,PPsysMgmt,Resources
-2.3.a.2   m3 solid volume o.b.,2.3.a.2 _ m3_solid_volume_o.b.,1,1,pcannchg,ProvServ,EcosysContrib,Resources
-3.1.a.1   MF1,3.1.a.1 _ MF1,-1,1,pcannchg,MatResEff,WasteReduc,Defossilization
-3.1.a.2   Material Footprint (Biomass) per capita,3.1.a.2 _ Material_Footprint_(Biomass)_per_capita,-1,1,pcannchg,MatResEff,WasteReduc,Defossilization
-3.1.b.1   EUR KGOE,3.1.b.1 _ EUR_KGOE,1,1,pcannchg,EnerEff,WasteReduc,Defossilization
-3.1.b.2   T2020 31,3.1.b.2 _ T2020_31,1,1,pcannchg,EnerEff,WasteReduc,Defossilization
-3.1.c.1   maximum cascading factor,3.1.c.1 _ maximum_cascading_factor,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.1   minimum cascading factor,3.1.c.1 _ minimum_cascading_factor,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.2   PC,3.1.c.2 _ PC,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.4   RCY,3.1.c.4 _ RCY,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W072 hh,3.1.c.5 _ W072_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W072 ind,3.1.c.5 _ W072_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W073 ind,3.1.c.5 _ W073_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W075 hh,3.1.c.5 _ W075_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W075 ind,3.1.c.5 _ W075_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W076 ind,3.1.c.5 _ W076_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W091 hh,3.1.c.5 _ W091_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W091 ind,3.1.c.5 _ W091_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W092 hh,3.1.c.5 _ W092_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W092 ind,3.1.c.5 _ W092_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W093 ind,3.1.c.5 _ W093_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W7376 hh,3.1.c.5 _ W7376_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.5   W9999 hh,3.1.c.5 _ W9999_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W072 hh,3.1.c.6 _ DSP_W072_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W072 ind,3.1.c.6 _ DSP_W072_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W073 ind,3.1.c.6 _ DSP_W073_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W075 hh,3.1.c.6 _ DSP_W075_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W075 ind,3.1.c.6 _ DSP_W075_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W076 ind,3.1.c.6 _ DSP_W076_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W091 hh,3.1.c.6 _ DSP_W091_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W091 ind,3.1.c.6 _ DSP_W091_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W092 hh,3.1.c.6 _ DSP_W092_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W092 ind,3.1.c.6 _ DSP_W092_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W093 ind,3.1.c.6 _ DSP_W093_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W7376 hh,3.1.c.6 _ DSP_W7376_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   DSP W9999 hh,3.1.c.6 _ DSP_W9999_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W072 hh,3.1.c.6 _ RCV_W072_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W072 ind,3.1.c.6 _ RCV_W072_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W073 ind,3.1.c.6 _ RCV_W073_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W075 hh,3.1.c.6 _ RCV_W075_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W075 ind,3.1.c.6 _ RCV_W075_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W076 ind,3.1.c.6 _ RCV_W076_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W091 hh,3.1.c.6 _ RCV_W091_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W091 ind,3.1.c.6 _ RCV_W091_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W092 hh,3.1.c.6 _ RCV_W092_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W092 ind,3.1.c.6 _ RCV_W092_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W093 ind,3.1.c.6 _ RCV_W093_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W7376 hh,3.1.c.6 _ RCV_W7376_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.1.c.6   RCV W9999 hh,3.1.c.6 _ RCV_W9999_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization
-3.2.a.1   Consumption,3.2.a.1 _ Consumption,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.1   Primary production,3.2.a.1 _ Primary_production,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.1   Processing Manufacturing,3.2.a.1 _ Processing_Manufacturing,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.1   Retail Distribution,3.2.a.1 _ Retail_Distribution,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Cereals,3.2.a.2 _ Cereals,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Dairy,3.2.a.2 _ Dairy,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Eggs,3.2.a.2 _ Eggs,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Fish,3.2.a.2 _ Fish,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Fruits,3.2.a.2 _ Fruits,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Meat,3.2.a.2 _ Meat,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Oilcrops,3.2.a.2 _ Oilcrops,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Potatoes,3.2.a.2 _ Potatoes,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Sugarbeets,3.2.a.2 _ Sugarbeets,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.2.a.2   Vegetables,3.2.a.2 _ Vegetables,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization
-3.4.a.2   1000 T of dry matter (Net trade),3.4.a.2 _ 1000_T_of_dry_matter_(Net_trade),1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization
-3.4.a.3   1000 T of dry matter (Net trade),3.4.a.3 _ 1000_T_of_dry_matter_(Net_trade),1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization
-3.4.a.4   energy,3.4.a.4 _ energy,-1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization
-3.4.a.4   material,3.4.a.4 _ material,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization
-3.4.c.1   REN,3.4.c.1 _ REN,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization
-3.4.c.1   REN ELC,3.4.c.1 _ REN_ELC,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization
-3.4.c.1   REN HEAT CL,3.4.c.1 _ REN_HEAT_CL,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization
-3.4.c.1   REN TRA,3.4.c.1 _ REN_TRA,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization
-4.1.a.3   CRF3,4.1.a.3 _ CRF3,-1,1,pcannchg,Mitigation,ClimChgMitAdapt,Climate
-4.1.a.6   CRF4,4.1.a.6 _ CRF4,-1,1,pcannchg,Mitigation,ClimChgMitAdapt,Climate
-4.1.b.2   C1111,4.1.b.2 _ C1111,1,1,pcannchg,Adaptation,ClimChgMitAdapt,Climate
-4.1.b.2   C1112,4.1.b.2 _ C1112,1,1,pcannchg,Adaptation,ClimChgMitAdapt,Climate
-4.1.b.2   C1500,4.1.b.2 _ C1500,1,1,pcannchg,Adaptation,ClimChgMitAdapt,Climate
-4.1.b.3   PC,4.1.b.3 _ PC,-1,1,pcannchg,Adaptation,ClimChgMitAdapt,Climate
-5.1.a.2   A01,5.1.a.2 _ A01,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   A02,5.1.a.2 _ A02,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   A03,5.1.a.2 _ A03,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bC13,5.1.a.2 _ bC13,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bC14,5.1.a.2 _ bC14,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bC15,5.1.a.2 _ bC15,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bC16,5.1.a.2 _ bC16,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bC17,5.1.a.2 _ bC17,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bC21,5.1.a.2 _ bC21,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bC22,5.1.a.2 _ bC22,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bC31,5.1.a.2 _ bC31,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bchem,5.1.a.2 _ bchem,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   bD3511,5.1.a.2 _ bD3511,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   Biod,5.1.a.2 _ Biod,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   Bioeth,5.1.a.2 _ Bioeth,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   C10,5.1.a.2 _ C10,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   C11,5.1.a.2 _ C11,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.2   C12,5.1.a.2 _ C12,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   A01,5.1.a.5 _ A01,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   A02,5.1.a.5 _ A02,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   A03,5.1.a.5 _ A03,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bC13,5.1.a.5 _ bC13,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bC14,5.1.a.5 _ bC14,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bC15,5.1.a.5 _ bC15,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bC16,5.1.a.5 _ bC16,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bC17,5.1.a.5 _ bC17,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bC21,5.1.a.5 _ bC21,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bC22,5.1.a.5 _ bC22,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bC31,5.1.a.5 _ bC31,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bchem,5.1.a.5 _ bchem,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   bD3511,5.1.a.5 _ bD3511,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   Biod,5.1.a.5 _ Biod,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   Bioeth,5.1.a.5 _ Bioeth,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   C10,5.1.a.5 _ C10,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   C11,5.1.a.5 _ C11,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.a.5   C12,5.1.a.5 _ C12,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness
-5.1.b.1   A01,5.1.b.1 _ A01,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   A02,5.1.b.1 _ A02,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   A03,5.1.b.1 _ A03,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bC13,5.1.b.1 _ bC13,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bC14,5.1.b.1 _ bC14,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bC15,5.1.b.1 _ bC15,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bC16,5.1.b.1 _ bC16,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bC17,5.1.b.1 _ bC17,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bC21,5.1.b.1 _ bC21,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bC22,5.1.b.1 _ bC22,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bC31,5.1.b.1 _ bC31,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bchem,5.1.b.1 _ bchem,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   bD3511,5.1.b.1 _ bD3511,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   Biod,5.1.b.1 _ Biod,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   Bioeth,5.1.b.1 _ Bioeth,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   C10,5.1.b.1 _ C10,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   C11,5.1.b.1 _ C11,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.1   C12,5.1.b.1 _ C12,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   A01,5.1.b.2 _ A01,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   A02,5.1.b.2 _ A02,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   A03,5.1.b.2 _ A03,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bC13,5.1.b.2 _ bC13,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bC14,5.1.b.2 _ bC14,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bC15,5.1.b.2 _ bC15,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bC16,5.1.b.2 _ bC16,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bC17,5.1.b.2 _ bC17,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bC21,5.1.b.2 _ bC21,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bC22,5.1.b.2 _ bC22,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bC31,5.1.b.2 _ bC31,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bchem,5.1.b.2 _ bchem,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   bD3511,5.1.b.2 _ bD3511,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   Biod,5.1.b.2 _ Biod,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   Bioeth,5.1.b.2 _ Bioeth,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   C10,5.1.b.2 _ C10,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   C11,5.1.b.2 _ C11,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.1.b.2   C12,5.1.b.2 _ C12,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness
-5.2.a.1   A01,5.2.a.1 _ A01,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   A02,5.2.a.1 _ A02,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   A03,5.2.a.1 _ A03,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bC13,5.2.a.1 _ bC13,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bC14,5.2.a.1 _ bC14,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bC15,5.2.a.1 _ bC15,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bC16,5.2.a.1 _ bC16,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bC17,5.2.a.1 _ bC17,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bC21,5.2.a.1 _ bC21,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bC22,5.2.a.1 _ bC22,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bC31,5.2.a.1 _ bC31,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bchem,5.2.a.1 _ bchem,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   bD3511,5.2.a.1 _ bD3511,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   Biod,5.2.a.1 _ Biod,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   Bioeth,5.2.a.1 _ Bioeth,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   C10,5.2.a.1 _ C10,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   C11,5.2.a.1 _ C11,1,1,pcannchg,Employment,InclGrowth,Competitiveness
-5.2.a.1   C12,5.2.a.1 _ C12,1,1,pcannchg,Employment,InclGrowth,Competitiveness
+IndName,IndCode,Direction,IndWeight,IntUnit,Agg_KC,Agg_NC,Agg_OBJ,,,,,
+1.1.a.1   I10,1.1.a.1 _ I10,1,1,pcannchg,Availability,SupportFoodSec,Food,,,,,
+1.1.a.4   1000 T of dry matter (Net trade),1.1.a.4 _ 1000_T_of_dry_matter_(Net_trade),1,1,pcannchg,Availability,SupportFoodSec,Food,,,,,
+1.1.b.1   percent,1.1.b.1 _ percent,-1,1,pcannchg,Access,SupportFoodSec,Food,,,,,
+1.1.c.1   ANI,1.1.c.1 _ ANI,1,1,pcannchg,Utilisation,SupportFoodSec,Food,,,,,
+1.1.c.1   VEG,1.1.c.1 _ VEG,1,1,pcannchg,Utilisation,SupportFoodSec,Food,,,,, 
+2.1.a.1  BOD,2.1.a.1 _ BOD,-1,1,pcannchg,EnvQual,EcosysCap,Resources,,,,,
+2.1.a.2  PO4_RIV,2.1.a.2 _ PO4_RIV,-1,1,pcannchg,EnvQual,EcosysCap,Resources,,,,,
+2.1.a.4  NO3_GW,2.1.a.4 _ NO3_GW,-1,1,pcannchg,EnvQual,EcosysCap,Resources,,,,,
+2.1.a.7  O3forests,2.1.a.7 _ O3forests,-1,1,pcannchg,EnvQual,EcosysCap,Resources,,,,,
+2.1.b.4   PC UAA,2.1.b.4 _ PC_UAA,1,1,pcannchg,StructrEcosys,EcosysCap,Resources,,,,,
+2.1.b.9   GS FOR,2.1.b.9 _ GS_FOR,1,1,pcannchg,StructrEcosys,EcosysCap,Resources,,,,,
+2.1.b.9   GS OWL,2.1.b.9 _ GS_OWL,1,1,pcannchg,StructrEcosys,EcosysCap,Resources,,,,,
+2.1.d.1   CO FARM I00,2.1.d.1 _ CO_FARM_I00,1,1,pcannchg,SpcsDivers,EcosysCap,Resources,,,,,
+2.1.d.1   CO FARM I90,2.1.d.1 _ CO_FARM_I90,1,1,pcannchg,SpcsDivers,EcosysCap,Resources,,,,,
+2.1.d.1   CO FOR I00,2.1.d.1 _ CO_FOR_I00,1,1,pcannchg,SpcsDivers,EcosysCap,Resources,,,,,
+2.1.d.1   CO FOR I90,2.1.d.1 _ CO_FOR_I90,1,1,pcannchg,SpcsDivers,EcosysCap,Resources,,,,,
+2.1.d.1   SME I00,2.1.d.1 _ SME_I00,1,1,pcannchg,SpcsDivers,EcosysCap,Resources,,,,,
+2.1.d.1   SME I90,2.1.d.1 _ SME_I90,1,1,pcannchg,SpcsDivers,EcosysCap,Resources,,,,,
+2.1.e.1   MPA KM2,2.1.e.1 _ MPA_KM2,1,1,pcannchg,Conservation,EcosysCap,Resources,,,,,
+2.1.e.1   TPA KM2,2.1.e.1 _ TPA_KM2,1,1,pcannchg,Conservation,EcosysCap,Resources,,,,,
+2.2.a.1 fellings,2.2.a.1 _ fellings,-1,1,pcannchg,Forestry,PPsysMgmt,Resources,,,,,
+2.2.b.2  exploitation,2.2.b.2 _ exploitation,-1,1,pcannchg,Fisheries,PPsysMgmt,Resources,,,,,
+2.2.d.5   HIGH INP,2.2.d.5 _ HIGH_INP,-1,1,pcannchg,AgroEcol,PPsysMgmt,Resources,,,,,
+2.2.d.5   LOW INP,2.2.d.5 _ LOW_INP,1,1,pcannchg,AgroEcol,PPsysMgmt,Resources,,,,,
+2.2.d.5   MED INP,2.2.d.5 _ MED_INP,-1,1,pcannchg,AgroEcol,PPsysMgmt,Resources,,,,,
+3.1.a.1   MF1,3.1.a.1 _ MF1,-1,1,pcannchg,MatResEff,WasteReduc,Defossilization,,,,,
+3.1.a.2   Material Footprint (Biomass) per capita,3.1.a.2 _ Material_Footprint_(Biomass)_per_capita,-1,1,pcannchg,MatResEff,WasteReduc,Defossilization,,,,,
+3.1.b.1   EUR KGOE,3.1.b.1 _ EUR_KGOE,1,1,pcannchg,EnerEff,WasteReduc,Defossilization,,,,,
+3.1.b.2   T2020 31,3.1.b.2 _ T2020_31,1,1,pcannchg,EnerEff,WasteReduc,Defossilization,,,,,
+3.1.c.1   maximum cascading factor,3.1.c.1 _ maximum_cascading_factor,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.1   minimum cascading factor,3.1.c.1 _ minimum_cascading_factor,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.2   PC,3.1.c.2 _ PC,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.4   RCY,3.1.c.4 _ RCY,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W072 hh,3.1.c.5 _ W072_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W072 ind,3.1.c.5 _ W072_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W073 ind,3.1.c.5 _ W073_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W075 hh,3.1.c.5 _ W075_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W075 ind,3.1.c.5 _ W075_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W076 ind,3.1.c.5 _ W076_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W091 hh,3.1.c.5 _ W091_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W091 ind,3.1.c.5 _ W091_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W092 hh,3.1.c.5 _ W092_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W092 ind,3.1.c.5 _ W092_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W093 ind,3.1.c.5 _ W093_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W7376 hh,3.1.c.5 _ W7376_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.5   W9999 hh,3.1.c.5 _ W9999_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W072 hh,3.1.c.6 _ DSP_W072_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W072 ind,3.1.c.6 _ DSP_W072_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W073 ind,3.1.c.6 _ DSP_W073_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W075 hh,3.1.c.6 _ DSP_W075_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W075 ind,3.1.c.6 _ DSP_W075_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W076 ind,3.1.c.6 _ DSP_W076_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W091 hh,3.1.c.6 _ DSP_W091_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W091 ind,3.1.c.6 _ DSP_W091_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W092 hh,3.1.c.6 _ DSP_W092_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W092 ind,3.1.c.6 _ DSP_W092_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W093 ind,3.1.c.6 _ DSP_W093_ind,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W7376 hh,3.1.c.6 _ DSP_W7376_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   DSP W9999 hh,3.1.c.6 _ DSP_W9999_hh,-1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W072 hh,3.1.c.6 _ RCV_W072_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W072 ind,3.1.c.6 _ RCV_W072_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W073 ind,3.1.c.6 _ RCV_W073_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W075 hh,3.1.c.6 _ RCV_W075_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W075 ind,3.1.c.6 _ RCV_W075_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W076 ind,3.1.c.6 _ RCV_W076_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W091 hh,3.1.c.6 _ RCV_W091_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W091 ind,3.1.c.6 _ RCV_W091_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W092 hh,3.1.c.6 _ RCV_W092_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W092 ind,3.1.c.6 _ RCV_W092_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W093 ind,3.1.c.6 _ RCV_W093_ind,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W7376 hh,3.1.c.6 _ RCV_W7376_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.1.c.6   RCV W9999 hh,3.1.c.6 _ RCV_W9999_hh,1,1,pcannchg,BiogenWastePrev,WasteReduc,Defossilization,,,,,
+3.2.a.1   Consumption,3.2.a.1 _ Consumption,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.1   Primary production,3.2.a.1 _ Primary_production,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.1   Processing Manufacturing,3.2.a.1 _ Processing_Manufacturing,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.1   Retail Distribution,3.2.a.1 _ Retail_Distribution,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Cereals,3.2.a.2 _ Cereals,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Dairy,3.2.a.2 _ Dairy,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Eggs,3.2.a.2 _ Eggs,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Fish,3.2.a.2 _ Fish,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Fruits,3.2.a.2 _ Fruits,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Meat,3.2.a.2 _ Meat,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Oilcrops,3.2.a.2 _ Oilcrops,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Potatoes,3.2.a.2 _ Potatoes,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Sugarbeets,3.2.a.2 _ Sugarbeets,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.2.a.2   Vegetables,3.2.a.2 _ Vegetables,-1,1,pcannchg,FoodLoss,FoodLossCascade,Defossilization,,,,,
+3.4.a.2   1000 T of dry matter (Net trade),3.4.a.2 _ 1000_T_of_dry_matter_(Net_trade),1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization,,,,,
+3.4.a.3   1000 T of dry matter (Net trade),3.4.a.3 _ 1000_T_of_dry_matter_(Net_trade),1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization,,,,,
+3.4.a.4   energy,3.4.a.4 _ energy,-1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization,,,,,
+3.4.a.4   material,3.4.a.4 _ material,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization,,,,,
+3.4.c.1   REN,3.4.c.1 _ REN,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization,,,,,
+3.4.c.1   REN ELC,3.4.c.1 _ REN_ELC,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization,,,,,
+3.4.c.1   REN HEAT CL,3.4.c.1 _ REN_HEAT_CL,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization,,,,,
+3.4.c.1   REN TRA,3.4.c.1 _ REN_TRA,1,1,pcannchg,ConsumpDemand,ConsumpPatt,Defossilization,,,,,
+4.1.a.3   CRF3,4.1.a.3 _ CRF3,1,1,pcannchg,Mitigation,ClimChgMitAdapt,Climate,,,,,
+4.1.a.6   CRF4,4.1.a.6 _ CRF4,1,1,pcannchg,Mitigation,ClimChgMitAdapt,Climate,,,,,
+4.1.b.2   C1111,4.1.b.2 _ C1111,1,1,pcannchg,Adaptation,ClimChgMitAdapt,Climate,,,,,
+4.1.b.2   C1112,4.1.b.2 _ C1112,1,1,pcannchg,Adaptation,ClimChgMitAdapt,Climate,,,,,
+4.1.b.2   C1500,4.1.b.2 _ C1500,1,1,pcannchg,Adaptation,ClimChgMitAdapt,Climate,,,,,
+4.1.b.3   PC,4.1.b.3 _ PC,-1,1,pcannchg,Adaptation,ClimChgMitAdapt,Climate,,,,,
+5.1.a.2   A01,5.1.a.2 _ A01,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   A02,5.1.a.2 _ A02,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   A03,5.1.a.2 _ A03,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bC13,5.1.a.2 _ bC13,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bC14,5.1.a.2 _ bC14,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bC15,5.1.a.2 _ bC15,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bC16,5.1.a.2 _ bC16,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bC17,5.1.a.2 _ bC17,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bC21,5.1.a.2 _ bC21,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bC22,5.1.a.2 _ bC22,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bC31,5.1.a.2 _ bC31,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bchem,5.1.a.2 _ bchem,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   bD3511,5.1.a.2 _ bD3511,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   Biod,5.1.a.2 _ Biod,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   Bioeth,5.1.a.2 _ Bioeth,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   C10,5.1.a.2 _ C10,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   C11,5.1.a.2 _ C11,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.2   C12,5.1.a.2 _ C12,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   A01,5.1.a.5 _ A01,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   A02,5.1.a.5 _ A02,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   A03,5.1.a.5 _ A03,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bC13,5.1.a.5 _ bC13,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bC14,5.1.a.5 _ bC14,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bC15,5.1.a.5 _ bC15,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bC16,5.1.a.5 _ bC16,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bC17,5.1.a.5 _ bC17,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bC21,5.1.a.5 _ bC21,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bC22,5.1.a.5 _ bC22,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bC31,5.1.a.5 _ bC31,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bchem,5.1.a.5 _ bchem,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   bD3511,5.1.a.5 _ bD3511,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   Biod,5.1.a.5 _ Biod,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   Bioeth,5.1.a.5 _ Bioeth,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   C10,5.1.a.5 _ C10,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   C11,5.1.a.5 _ C11,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.a.5   C12,5.1.a.5 _ C12,1,1,pcannchg,BioeconinEcon,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   A01,5.1.b.1 _ A01,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   A02,5.1.b.1 _ A02,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   A03,5.1.b.1 _ A03,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bC13,5.1.b.1 _ bC13,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bC14,5.1.b.1 _ bC14,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bC15,5.1.b.1 _ bC15,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bC16,5.1.b.1 _ bC16,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bC17,5.1.b.1 _ bC17,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bC21,5.1.b.1 _ bC21,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bC22,5.1.b.1 _ bC22,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bC31,5.1.b.1 _ bC31,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bchem,5.1.b.1 _ bchem,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   bD3511,5.1.b.1 _ bD3511,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   Biod,5.1.b.1 _ Biod,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   Bioeth,5.1.b.1 _ Bioeth,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   C10,5.1.b.1 _ C10,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   C11,5.1.b.1 _ C11,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.1   C12,5.1.b.1 _ C12,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   A01,5.1.b.2 _ A01,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   A02,5.1.b.2 _ A02,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   A03,5.1.b.2 _ A03,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bC13,5.1.b.2 _ bC13,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bC14,5.1.b.2 _ bC14,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bC15,5.1.b.2 _ bC15,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bC16,5.1.b.2 _ bC16,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bC17,5.1.b.2 _ bC17,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bC21,5.1.b.2 _ bC21,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bC22,5.1.b.2 _ bC22,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bC31,5.1.b.2 _ bC31,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bchem,5.1.b.2 _ bchem,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   bD3511,5.1.b.2 _ bD3511,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   Biod,5.1.b.2 _ Biod,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   Bioeth,5.1.b.2 _ Bioeth,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   C10,5.1.b.2 _ C10,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   C11,5.1.b.2 _ C11,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.1.b.2   C12,5.1.b.2 _ C12,1,1,pcannchg,ValueAdded,FosterEconDev,Competitiveness,,,,,
+5.2.a.1   A01,5.2.a.1 _ A01,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   A02,5.2.a.1 _ A02,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   A03,5.2.a.1 _ A03,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bC13,5.2.a.1 _ bC13,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bC14,5.2.a.1 _ bC14,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bC15,5.2.a.1 _ bC15,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bC16,5.2.a.1 _ bC16,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bC17,5.2.a.1 _ bC17,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bC21,5.2.a.1 _ bC21,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bC22,5.2.a.1 _ bC22,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bC31,5.2.a.1 _ bC31,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bchem,5.2.a.1 _ bchem,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   bD3511,5.2.a.1 _ bD3511,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   Biod,5.2.a.1 _ Biod,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   Bioeth,5.2.a.1 _ Bioeth,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   C10,5.2.a.1 _ C10,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   C11,5.2.a.1 _ C11,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,
+5.2.a.1   C12,5.2.a.1 _ C12,1,1,pcannchg,Employment,InclGrowth,Competitiveness,,,,,

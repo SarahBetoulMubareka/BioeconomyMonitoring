@@ -2,10 +2,13 @@ AgLevel,Code,Name,Weight
 2,Availability,Food availability,1
 2,Access,Food accessibility,1
 2,Utilisation,Food utilisation,1
+2,EnvQual,Environmental quality,1
+2,SpcsDivers,Species Diversity,1
 2,StructrEcosys,Structural and functional ecosystem attributes,1
 2,Conservation,Conservation status of habitats and species,1
+2,Forests,Pressures from forests,1
+2,Fisheries,Pressures from fisheries,1
 2,AgroEcol,Pressures from agroecosystems,1
-2,ProvServ,Provisional services,1
 2,MatResEff,Material Resource efficiency,1
 2,EnerEff,"Biogenic waste prevention, re-use,recycling, and recovery",1
 2,BiogenWastePrev,"Biogenic waste prevention, re-use,recycling, and recovery",1
@@ -17,9 +20,8 @@ AgLevel,Code,Name,Weight
 2,ValueAdded,"Value of raw and processed biomass, value added in bioeconomy sectors",1
 2,Employment,Employment in bioeconomy,1
 3,SupportFoodSec,Food security and nutrition are supported,1
-3,EcosysProd,Ecosystem capacity to produce services is maintained or enhanced ,1
-3,PPsysMgmt, Primary production sectors are managed sustainably,1
-3,EcosysContrib,Ecosystem services contribution to human well-being is maintained or enhanced,1
+3,EcosysCap,Ecosystem capacity to produce services is maintained or enhanced ,1
+3,PPsysMgmt,Primary production sectors are managed sustainably,1
 3,WasteReduc,"Resource efficiency, waste prevention and waste-re-use along the whole bioeconomy value chain is improved",1
 3,FoodLossCascade,"Food loss and waste is minimised and, when unavoidable, its biomass is reused or recycled",1
 3,ConsumpPatt,Consumption patterns of bioeconomy goods match sustainable supply levels of biomass,1

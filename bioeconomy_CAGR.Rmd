@@ -25,9 +25,7 @@ library(naniar)
 ```
 ## Pre-processing indicators 
 
-The code below shows the procedure for creating the composite view of trends of the EU Bioeconomy's main objectives. The approach is a hierarchical one, with treatment of indicators and aggregation to key component and normative criteria levels and ultimately to the Strategy Objectives level.
-
-We start by exploring and cleaning the raw indicators and filling in data for the alternate years (some indicators report every other year only).
+The code below shows the procedure for creating the summary of trends of the EU Bioeconomy's main objectives, normative criteria and key components. The approach is a hierarchical one, with treatment of indicators and aggregation to key component and normative criteria levels and ultimately to the Strategy Objectives level.
 
 ### Read all indicators csv file 
 The indicators were bulk downloaded from the system internally. This is not yet possible from the Internet but is planned. One of the attributes downloaded is the Green Deal Key. Indicators may have many Green Deal priorities associated. This results in multiple entries per indicator. 
